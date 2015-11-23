@@ -16,13 +16,21 @@
 @end
 
 @implementation ViewController
+@synthesize temperatureLabel,WindSpeedLbel,iconImage,SummaryLabel;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     [self getCurrentLocation];
+    [self initializeViewAttributes];
+
     
-    
+}
+-(void)initializeViewAttributes
+{
+    temperatureLabel.text = @"";
+    WindSpeedLbel.text = @"";
+    SummaryLabel.text = @"";
 }
 
 -(void)getCurrentLocation

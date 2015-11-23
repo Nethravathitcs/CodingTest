@@ -20,5 +20,6 @@
 //Map dictionary to weather object
 + (Weather*)weatherFromDictionary:(NSDictionary*)dicWeather;
 
++(NSURL*)getNSUrlForParameters:(NSDictionary*)parameterDict;
 
 @end

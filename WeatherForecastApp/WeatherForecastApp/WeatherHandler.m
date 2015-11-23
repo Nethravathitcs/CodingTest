@@ -10,6 +10,13 @@
 
 @implementation WeatherHandler
 
++(NSURL*)getNSUrlForParameters:(NSDictionary*)parameterDict
+{
+    NSString* urlString = [NSString stringWithFormat:@"%@%@/%@",parameterDict[kURL],parameterDict[kApiKey],parameterDict[kCoordinates]];
+    NSURL *url = [NSURL URLWithString:urlString];
+    
+    return url;
+}
 + (void)getWeatherForLocation:(CLLocation*)location OnSuccess:(void (^)(Weather* weather))successBlock OnFailure:(void (^)(NSError *error))failureBlock
 {
     NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@/%lf,%lf",
